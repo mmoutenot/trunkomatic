@@ -3,10 +3,10 @@
   </head>
   <body>
     <h1>Trunk-o-Matic</h1>
-    <h2>Shows ({% num_shows %})</h2>
+    <h2>Shows ({{ num_shows }})</h2>
     <ul>
       {% for show in shows %}
-        <li>show</li>
+        <li>show.date</li>
       {% endfor %}
     </ul>
   </body>
