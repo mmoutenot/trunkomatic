@@ -6,7 +6,7 @@
     <h2>Shows ({{ num_shows }})</h2>
     <ul>
       {% for show in shows %}
-        <li>{{ show.date }}</li>
+      <li><a href = "/show/{{ show.id }}">{{ show.date }}</a></li>
       {% endfor %}
     </ul>
   </body>
