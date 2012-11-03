@@ -1,12 +1,10 @@
 from django.contrib.auth.models import User
 from django.db import models
 
-from django.contrib.localflavor.us.forms import USPhoneNumberField
-
 class UserProfile(models.Model):
   user = models.ForeignKey(User, related_name='profile')
 
-  phone_number = USPhoneNumberField()
+  phone_number = models.CharField(max_length=10)
 
   CARRIER_CHOICES = (('VZ','verizon'),
                      ('AT','att'),
