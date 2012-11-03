@@ -3,9 +3,13 @@ from django.contrib.auth.models import User
 
 
 class Performer(models.Model):
-  user = ForeignKey(User)
-  ROLE_CHOICES = ['driver','costumes','envelopes','funk','']
-  role = models.CharField(choices=ROLE_CHOICES, default='')
+  user = models.ForeignKey(User)
+  ROLE_CHOICES = (('DV','driver'),
+                  ('CS','costumes'),
+                  ('EN','envelopes'),
+                  ('FN','funk'),
+                  ('',''))
+  role = models.CharField(max_length=2, choices=ROLE_CHOICES, default='')
 
 # Create your models here.
 class Show(models.Model):

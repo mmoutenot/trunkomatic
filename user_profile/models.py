@@ -1,14 +1,15 @@
 from django.contrib.auth.models import User
 from django.db import models
-from managers import UserProfileManager
 
-from django.contrib.localflabor.us.forms import USPhoneNumberField
+from django.contrib.localflavor.us.forms import USPhoneNumberField
 
 class UserProfile(models.Model):
   user = models.ForeignKey(User, related_name='profile')
-  objects = UserProfileManager()
 
   phone_number = USPhoneNumberField()
 
-  CARRIER_CHOICES = ['verizon','att','tmobile','sprint']
-  carrier = models.CharField(choices=CARRIER_CHOICES, default='verizon')
+  CARRIER_CHOICES = (('VZ','verizon'),
+                     ('AT','att'),
+                     ('TM','tmobile'),
+                     ('SP','sprint'))
+  carrier = models.CharField(max_length=2, choices=CARRIER_CHOICES, default='VZ')
