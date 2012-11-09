@@ -8,8 +8,8 @@ class Performer(models.Model):
                   ('CS','costumes'),
                   ('EN','envelopes'),
                   ('FN','funk'),
-                  ('',''))
-  role = models.CharField(max_length=2, choices=ROLE_CHOICES, default='')
+                  ('NA','nuthin'))
+  role = models.CharField(max_length=2, choices=ROLE_CHOICES, default='NA', )
 
   def __unicode__(self):
     return str(self.user) + " - " + self.get_role_display()
