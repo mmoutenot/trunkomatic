@@ -9,7 +9,7 @@ class Performer(models.Model):
                   ('EN','envelopes'),
                   ('FN','funk'),
                   ('NA','nuthin'))
-  role = models.CharField(max_length=2, choices=ROLE_CHOICES, default='NA', )
+  role = models.CharField(max_length=2, choices=ROLE_CHOICES, default='NA')
 
   def __unicode__(self):
     return str(self.user) + " - " + self.get_role_display()
