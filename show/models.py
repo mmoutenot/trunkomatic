@@ -11,8 +11,14 @@ class Performer(models.Model):
                   ('',''))
   role = models.CharField(max_length=2, choices=ROLE_CHOICES, default='')
 
+  def __unicode__(self):
+    return str(user) + " - " + self.get_role_display()
+
 # Create your models here.
 class Show(models.Model):
   date = models.DateField()
   performers = models.ManyToManyField(Performer)
+
+  def __unicode__(self):
+    return str(self.date)
 

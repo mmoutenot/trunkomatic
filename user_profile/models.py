@@ -11,3 +11,6 @@ class UserProfile(models.Model):
                      ('TM','tmobile'),
                      ('SP','sprint'))
   carrier = models.CharField(max_length=2, choices=CARRIER_CHOICES, default='VZ')
+
+  def __unicode__(self):
+    return str(self.user)

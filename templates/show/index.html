@@ -4,6 +4,7 @@
   <body>
     <h1>Trunk-o-Matic</h1>
     <h2>Shows ({{ num_shows }})</h2>
+    <h3><a href="">Add Show</a></h3>
     <ul>
       {% for show in shows %}
       <li><a href = "/show/{{ show.id }}">{{ show.date }}</a></li>

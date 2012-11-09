@@ -12,7 +12,7 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'trunkomatic',                      # Or path to database file if using sqlite3.
         'USER': 'trunkomatic',                      # Not used with sqlite3.
         'PASSWORD': 'trunkomatic',                  # Not used with sqlite3.
@@ -123,6 +123,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'south',
 
+    'utility',
     'user_profile',
     'show',
 )
@@ -156,5 +157,7 @@ LOGGING = {
     }
 }
 
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+AUTH_PROFILE_MODULE = "user_profile.userprofile"
+
+# import dj_database_url
+# DATABASES['default'] =  dj_database_url.config()

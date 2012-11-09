@@ -6,7 +6,7 @@
     <h2>Trunkers</h2>
     <ul>
       {% for performer in performers %}
-      <li>{{ performer.user }} ({{ performer.phone_number }}) - {{ performer.get_role_display }}</li>
+      <li>{{ performer.user }} ({{ performer.user.get_profile.phone_number }}) - {{ performer.get_role_display }}</li>
       {% endfor %}
     </ul>
   </body>
